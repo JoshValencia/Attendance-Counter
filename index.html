@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <form id="form">
+        <div class="form-group">
+          <label for="first">(1)</label>
+          <input
+            name="first"
+            type="number"
+            class="form-control"
+            id="first"
+            placeholder="0"
+          />
+        </div>
+        <div class="form-group">
+          <label for="second">(2)</label>
+          <input
+            name="second"
+            type="number"
+            class="form-control"
+            id="second"
+            placeholder="0"
+          />
+        </div>
+        <div class="form-group">
+          <label for="third">(3)</label>
+          <input
+            name="third"
+            type="number"
+            class="form-control"
+            id="third"
+            placeholder="0"
+          />
+        </div>
+        <div class="form-group">
+          <label for="fourth">(4)</label>
+          <input
+            name="fourth"
+            type="number"
+            class="form-control"
+            id="fourth"
+            placeholder="0"
+          />
+        </div>
+        <div class="form-group">
+          <label for="fifth">(5)</label>
+          <input
+            name="fifth"
+            type="number"
+            class="form-control"
+            id="fifth"
+            placeholder="0"
+          />
+        </div>
+        <div class="form-group">
+          <label for="sixth">(6)</label>
+          <input
+            name="sixth"
+            type="number"
+            class="form-control"
+            id="sixth"
+            placeholder="0"
+          />
+        </div>
+        <div class="form-group">
+          <label for="seventh">(7)</label>
+          <input
+            name="seventh"
+            type="number"
+            class="form-control"
+            id="seventh"
+            placeholder="0"
+          />
+        </div>
+        <div class="form-group">
+          <label for="eight">(8)</label>
+          <input
+            name="eight"
+            type="number"
+            class="form-control"
+            id="eight"
+            placeholder="0"
+          />
+        </div>
+        <div class="form-group">
+          <label for="nine">(9)</label>
+          <input
+            type="number"
+            name="nine"
+            class="form-control"
+            id="nine"
+            placeholder="0"
+          />
+        </div>
+        <div class="form-group">
+          <label for="ten">(10)</label>
+          <input
+            type="number"
+            name="ten"
+            class="form-control"
+            id="ten"
+            placeholder="0"
+          />
+        </div>
+        <button type="submit" class="btn-primary btn-lg">Submit</button>
+      </form>
+      <div class="container">
+        <h2><strong>Total: </strong><span id="total"></span></h2>
+      </div>
+    </div>
+
+    <script>
+      $("#form").submit(function (event) {
+        event.preventDefault();
+        let data = $(this).serializeArray();
+        let count = 0;
+        let tempTotal = 0;
+        let total = data.map((obj, i) => {
+          let val = Number(obj.value) * (i + 1);
+          tempTotal = count += val;
+        });
+        $("#total").text(String(tempTotal));
+      });
+    </script>
+  </body>
+</html>
